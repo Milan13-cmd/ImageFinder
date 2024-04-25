@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy";
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-block: 40px;
+  background-color: #b2b7ae62;
+}
+
+header {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+header h1 {
+  color: rgb(100, 177, 191);
+}
+
+header form .search-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+header form .search-container input {
+  width: 100%;
+  font-size: 20px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-color: rgb(208, 219, 228);
+}
+
+header form .search-container i {
+  position: absolute;
+  bottom: 25%;
+  right: 2%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 50px 0;
+
+  background: rgba(255, 255, 255, 0.2);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.image-container {
+  margin-block: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+}
+
+.image-container img {
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+  /* height: 280px; */
+}
+.image-container .imagesDiv {
+  position: relative;
+}
+.imagesDiv .overlay {
+  position: absolute;
+  left: 0;
+  bottom: 1%;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: height 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* text-align: left; */
+}
+.imagesDiv:hover .overlay {
+  height: 20%;
+  max-height: 25%;
+  border: none;
+}
+
+.imagesDiv .overlay p {
+  color: #fff;
+  display: none;
+  font-size: 16px;
+  /* margin-left: 20px; */
+  padding: 10px 15px;
+}
+.imagesDiv:hover .overlay p {
+  display: block;
+}
+
+.loadMore {
+  display: none;
+  border: none;
+  padding: 8px 10px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: aliceblue;
+  background-color: #234b83;
+}
+
+/* Responsive Code */
+@media screen and (max-width: 920px) {
+  header {
+    width: 80%;
+  }
+}
