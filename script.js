@@ -1,4 +1,4 @@
-const accessKey = "A6LkXKfM6tLOs0yTzcUI62KYo63itd3v_Vn7BD9Ed5Q";
+const accessKey = "your _access_key";
 const searchForm = document.querySelector("form");
 const imageContainer = document.querySelector(".image-container");
 const loadMoreBtn = document.querySelector(".loadMore");
