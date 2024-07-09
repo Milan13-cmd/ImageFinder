@@ -1,4 +1,5 @@
-const accessKey = "your _access_key";
+
+const accessKey = 'Your_Access_Key';
 const searchForm = document.querySelector("form");
 const imageContainer = document.querySelector(".image-container");
 const loadMoreBtn = document.querySelector(".loadMore");
@@ -33,7 +34,32 @@ const fetchImages = async (query, page) => {
         const overlayText = document.createElement("p");
         overlayText.textContent = `${photo.alt_description}`;
 
+        // Creating download button
+        const downloadBtn = document.createElement('a');
+        downloadBtn.classList.add('downloadBtn');
+        downloadBtn.innerHTML = `<i class="ri-download-line"></i>`;
+        
+        // Add this event listener
+        downloadBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          fetch(photo.urls.full)
+            .then(res => res.blob())
+            .then(blob => {
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.style.display = 'none';
+              a.href = url;
+              a.download = `${photo.id}.jpg`;
+              document.body.appendChild(a);
+              a.click();
+              window.URL.revokeObjectURL(url);
+            })
+            .catch(() => alert('Failed to download image'));
+        });
+
+
         overlayElement.appendChild(overlayText);
+        overlayElement.appendChild(downloadBtn)
         imageElement.appendChild(overlayElement);
         imageContainer.appendChild(imageElement);
       });

@@ -123,6 +123,11 @@ main section {
   background-color: #234b83;
 }
 
+.downloadBtn{
+  color:white;
+  list-style: none;
+  
+}
 /* Responsive Code */
 @media screen and (max-width: 920px) {
   header {
